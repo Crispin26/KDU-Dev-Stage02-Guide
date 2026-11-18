@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Dependencies / build output (not used here, but keeps the repo clean)
+node_modules/
+dist/
+.netlify/
+
+# Logs
+*.log

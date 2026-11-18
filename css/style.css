@@ -1,0 +1,109 @@
+/* =====================================================================
+   KDU Dev Community — Stage 02 follow-along guide
+   style.css — everything about how the guide looks.
+   The portfolio code that students copy lives in js/steps.js, not here.
+   ===================================================================== */
+
+:root{
+  --purple:#6D4AFF; --purple-dark:#5033CC; --navy:#111827;
+  --lav:#EEE9FF; --surface:#F8FAFC; --border:#E2E8F0; --muted:#64748B;
+  --add:#DCFCE7; --add-bar:#22C55E;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+     background:#fff;color:var(--navy);line-height:1.6}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;
+     display:flex;align-items:center;gap:20px;padding:12px 22px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:17px;letter-spacing:.3px}
+.brand span{color:#A78BFA}
+.top .meta{font-size:12.5px;color:#94A3B8}
+.spacer{flex:1}
+.progwrap{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#CBD5E1}
+.progbar{width:150px;height:7px;background:#334155;border-radius:4px;overflow:hidden}
+.progfill{height:100%;background:var(--purple);width:0%;transition:width .25s}
+
+/* ---------- layout ---------- */
+.wrap{display:flex;align-items:flex-start;max-width:1500px;margin:0 auto}
+.side{width:280px;flex:none;border-right:1px solid var(--border);
+      padding:22px 0 60px;position:sticky;top:53px;max-height:calc(100vh - 53px);overflow-y:auto}
+.part-h{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;
+        color:var(--purple);padding:16px 22px 8px}
+.part-h small{display:block;font-weight:600;letter-spacing:0;text-transform:none;
+              color:var(--muted);font-size:11.5px;margin-top:3px}
+.slink{display:flex;gap:11px;align-items:flex-start;padding:9px 22px;cursor:pointer;
+       font-size:13.5px;color:#334155;border-left:3px solid transparent}
+.slink:hover{background:var(--surface)}
+.slink.on{background:var(--lav);border-left-color:var(--purple);color:var(--navy);font-weight:700}
+.slink .n{width:21px;height:21px;flex:none;border-radius:50%;background:#E2E8F0;color:#475569;
+          font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.slink.on .n{background:var(--purple);color:#fff}
+.slink.done .n{background:var(--add-bar);color:#fff}
+
+.main{flex:1;min-width:0;padding:30px 34px 90px}
+
+/* ---------- step head ---------- */
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+     background:var(--lav);color:var(--purple-dark);padding:5px 12px;border-radius:999px}
+h1.step{font-size:31px;font-weight:800;margin:12px 0 10px;letter-spacing:-.4px}
+.blurb{font-size:16px;color:#334155;max-width:760px}
+.why{margin-top:16px;background:var(--surface);border-left:4px solid var(--purple);
+     border-radius:0 8px 8px 0;padding:14px 18px;font-size:14.5px;color:#334155;max-width:860px}
+.why b{color:var(--navy)}
+
+/* ---------- panels ---------- */
+.panes{display:flex;gap:22px;margin-top:26px;align-items:flex-start;flex-wrap:wrap}
+.pane{flex:1;min-width:430px;border:1px solid var(--border);border-radius:11px;overflow:hidden;background:#fff}
+.pane-h{display:flex;align-items:center;gap:8px;padding:9px 13px;background:var(--surface);
+        border-bottom:1px solid var(--border);font-size:12.5px;font-weight:700;color:#475569}
+.tabs{display:flex;gap:6px}
+.tab{padding:5px 12px;border-radius:6px;cursor:pointer;font-size:12.5px;font-weight:700;color:#64748B;background:#fff;border:1px solid var(--border)}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tab .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--add-bar);margin-left:6px;vertical-align:middle}
+.copy{margin-left:auto;padding:5px 12px;border-radius:6px;border:1px solid var(--border);
+      background:#fff;cursor:pointer;font-size:12px;font-weight:700;color:#475569}
+.copy:hover{background:var(--lav);color:var(--purple-dark)}
+
+pre{margin:0;max-height:520px;overflow:auto;background:#0F172A}
+.ln{display:flex;font-family:"SF Mono",Consolas,Menlo,monospace;font-size:12.5px;line-height:1.75;
+    color:#CBD5E1;white-space:pre}
+.ln .num{width:42px;flex:none;text-align:right;padding-right:12px;color:#475569;user-select:none}
+.ln .txt{padding-right:16px}
+.ln.new{background:rgba(34,197,94,.17);box-shadow:inset 3px 0 0 var(--add-bar)}
+.ln.new .num{color:#4ADE80}
+.empty{padding:26px;color:#64748B;font-size:13.5px;font-family:monospace}
+
+.pv-note{font-size:11.5px;color:var(--muted);font-weight:600}
+.pvbtns{margin-left:auto;display:flex;gap:6px}
+.pvb{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:#fff;
+     cursor:pointer;font-size:12px;font-weight:700;color:#64748B}
+.pvb.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.pvstage{height:520px;overflow:hidden;background:#F1F5F9;position:relative}
+.pvstage.phone{display:flex;justify-content:center;padding:14px 0;background:#E2E8F0}
+iframe{border:0;background:#fff;display:block;transform-origin:top left}
+.pvstage.phone iframe{transform:none!important;width:390px;height:492px;
+     border-radius:14px;box-shadow:0 6px 20px rgba(15,23,42,.2)}
+
+/* ---------- changed summary ---------- */
+.changed{margin-top:22px;border:1px solid #BBF7D0;background:#F0FDF4;border-radius:10px;padding:14px 18px;max-width:1000px}
+.changed h4{font-size:12.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#15803D;margin-bottom:7px}
+.changed p{font-size:14px;color:#166534}
+
+/* ---------- nav buttons ---------- */
+.navbtns{display:flex;gap:12px;margin-top:30px;align-items:center}
+button.nav{padding:12px 24px;border-radius:9px;border:0;cursor:pointer;font-size:14.5px;font-weight:700}
+.prev{background:#fff;border:1px solid var(--border);color:#475569}
+.next{background:var(--purple);color:#fff;box-shadow:0 5px 14px rgba(109,74,255,.32)}
+.next:disabled,.prev:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.kb{font-size:12px;color:var(--muted);margin-left:8px}
+
+.term{background:#0F172A;color:#E2E8F0;border-radius:9px;padding:14px 18px;margin-top:16px;
+      font-family:Consolas,monospace;font-size:13px;max-width:860px;white-space:pre-wrap}
+.term .c{color:#4ADE80}
+
+@media(max-width:1100px){
+  .side{display:none}
+  .pane{min-width:100%}
+}
